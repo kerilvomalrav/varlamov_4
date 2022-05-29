@@ -177,9 +177,9 @@ else {
   $user = 'u47744';
 $pass = '9352325';
 $db = new PDO('mysql:host=localhost;dbname=u47744', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
-$stmt = $db->prepare("INSERT INTO application_2 SET name = ?, email = ?, DataBr = ?, sex = ?, hands = ?, ult = ?, bio = ?");
+$stmt = $db->prepare("INSERT INTO application_2 SET name = ?, email = ?, date = ?, radio-group-1 = ?, radio-group-2 = ?, ultimate = ?, bio = ?");
 $stmt -> execute([$_POST['name'],$_POST['email'],$_POST['date'],$_POST['radio-group-1'],$_POST['radio-group-2'],$_POST['bio']]);
-$stmt = $db->prepare("INSERT INTO ult SET user_id = ?, nomer = ?");
+$stmt = $db->prepare("INSERT INTO ultimate SET user_id = ?, nomer = ?");
 $id = $db->lastInsertId();
 foreach ($_POST['ultimate'] as $per) { 
   $stmt-> execute([$id,$per]);
