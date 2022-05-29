@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $messages[] = '<div class="error">Вы забыли выбрать суперспособность.</div>';
   }
   if ($errors['bio']) {
-    setcookie('io_error', '', 100000);
+    setcookie('bio_error', '', 100000);
     $messages[] = '<div class="error">Вы забыли рассказать о себе.</div>';
   }
   if ($errors['radio-group-1']) {
